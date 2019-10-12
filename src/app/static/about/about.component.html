@@ -1,0 +1,13 @@
+
+<button class="centerB" mat-raised-button (click)="click()">Click!</button>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12" >
+        <h2  *ngIf="!(authName$ | async)" [ngClass]="routeAnimationsElements" class="main-heading">Qu'est-ce qui ce passe, maintenant?</h2>
+        <h2 *ngIf="authName$ | async"  [ngClass]="routeAnimationsElements">Bienvenue, {{authName$ | async}}</h2>
+      </div>
+    </div>
+    <img class="intro routeAnimationsElements" src="assets/Lys.png"/>
+<h5 id="identification" [ngClass]="routeAnimationsElements" >Pour vous identifier, vous avez deux choix. Si vous avez un compte gmail, cliquez sur le G de Google, en haut à droite. Sinon cliquez sur le petit bonhome à côté pour vous enregistrer, un courriel vous sera envoyé pour être certain que c'est vous, répondez-lui. Ensuite, vous pourrez vous identifier (sur la page d'authentification).</h5>
+
+</div>

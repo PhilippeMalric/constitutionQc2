@@ -1,0 +1,57 @@
+<!--
+  <mat-card>
+
+    <mat-card-header>
+
+      {{variableData}}
+
+    </mat-card-header>
+    <mat-card-subtitle>
+        {{variableData}}
+    </mat-card-subtitle>
+    <mat-card-content>
+        {{variableData}}
+
+    <mat-form-field appearance="fill" onch>
+        <mat-label>Recherche</mat-label>
+        <input matInput placeholder="recherche" (change)="changed($event.srcElement.value)">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Appuyez sur entré quand vous avez fini</mat-hint>
+
+      </mat-form-field>
+
+
+    </mat-card-content>
+    <mat-card-actions *ngIf="!!variableData.url">
+        <a mat-button color="accent" [href]="variableData"  >
+            <i class="fa fa-clipboard"></i>
+            goto {{variableData}}
+        </a>
+    </mat-card-actions>
+    </mat-card>
+ -->
+
+<div  class="flexElement">
+    <mat-card class="image-card" *ngFor="let item of variableData" >
+
+        <mat-card-header>
+            <h3>{{item?.Label}}</h3>
+        </mat-card-header>
+
+        <mat-card-subtitle>
+            <p>{{item.Name}}</p>
+        </mat-card-subtitle>
+
+        <mat-card-content class="wrap">
+            <h4>{{item.Type}}</h4>
+            <h5>{{item.Dataset}}</h5>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button color="accent" (click)="click(item.nom)"  >
+                <i class="fa fa-clipboard"></i>
+                {{item.Study}}
+              </button>
+        </mat-card-actions>
+      </mat-card>
+</div>
+

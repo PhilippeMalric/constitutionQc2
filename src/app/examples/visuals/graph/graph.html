@@ -1,0 +1,62 @@
+<div class="center">
+
+<svg #svg [attr.width]="_options.width" [attr.height]="_options.height" [attr.viewBox]="x+' '+y+' '+x2+' '+y2">
+
+
+    <g [zoomableOf]="svg">
+      <rect  x="150" y="0" width="6050" [attr.height]="height" style="fill:rgb(15, 15, 15);stroke-width:3;stroke:rgb(0,0,0)" />
+      <rect  x="200" y="0" width="30" [attr.height]="height" style="fill:rgb(255, 0, 0);stroke-width:3;stroke:rgb(151, 0, 0)" />
+      <rect  x="6200" y="0" width="75" [attr.height]="height" style="fill:rgb(53, 53, 53);stroke-width:3;stroke:rgb(78, 76, 76)" />
+      <g [linkVisual2]="link" *ngFor="let link of links"></g>
+      <g [nodeVisual]="node" *ngFor="let node of nodes"
+          [draggableNode]="node" [draggableInGraph]="graph"
+          >
+      </g>
+      <g [nodeVisual2]="node" *ngFor="let node of nodesForHisto"
+          [draggableNode]="node" [draggableInGraph]="graph"
+          >
+      </g>
+    </g>
+
+  </svg>
+</div>
+
+
+
+<!--
+<div class="center">
+  <button type="button" mat-raised-button color="accent"
+    [ngClass]="routeAnimationsElements" (click)="clickButton()">
+    click
+  </button>
+
+  <button type="button" mat-raised-button color="accent"
+  [ngClass]="routeAnimationsElements" (click)="clickButton2()">
+  click2
+</button>
+
+</div>
+
+
+-->
+<div class="center">
+
+  <button *ngIf="!fin" type="button" mat-fab color="primary"
+  [ngClass]="routeAnimationsElements" (click)="start()">
+  Départ!
+</button>
+<!--
+
+<button type="button" mat-raised-button color="accent"
+  [ngClass]="routeAnimationsElements" (click)="resetDb()">
+  ResetDb
+</button>
+
+<button type="button" mat-raised-button color="accent"
+  [ngClass]="routeAnimationsElements" (click)="center()">
+  Center
+</button>
+-->
+</div>
+
+
